@@ -21,14 +21,14 @@ public class Player1 : MonoBehaviour{
 
     //
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {        
         // Widen or Narrow the object by 0.1
-        if (Input.GetKeyDown(KeyCode.W) & (FallBall.transform.lossyScale.magnitude <= V_MaxRadius.magnitude))
+        if (Input.GetKey(KeyCode.W) &(FallBall.transform.lossyScale.magnitude <= V_MaxRadius.magnitude))
         {
             FallBall.transform.localScale += new Vector3(0.1f, 0.1f, 0);
         }
-        else if (Input.GetKeyDown(KeyCode.S) & (FallBall.transform.lossyScale.magnitude >= V_MinRadius.magnitude))
+        if (Input.GetKey(KeyCode.S) & (FallBall.transform.lossyScale.magnitude >= V_MinRadius.magnitude))
         {
             FallBall.transform.localScale += new Vector3(-0.1f, -0.1f, 0);
         }
