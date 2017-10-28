@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class OffscreenCheck : MonoBehaviour {
-	
+	public float objDistance=-2.0f;
 	void FixedUpdate() {
 		CheckInBounds();
 	}
@@ -20,7 +20,7 @@ public class OffscreenCheck : MonoBehaviour {
 
 	float GetSafeDistance() {
 		float maxCamDistance = GetMaxCamDistance();
-		float objDistance = 0f;	//Object width
+		//float objDistance = 0f;	//Object width
 		return maxCamDistance + objDistance;
 	}
 
