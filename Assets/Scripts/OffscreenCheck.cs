@@ -8,12 +8,12 @@ public class OffscreenCheck : MonoBehaviour {
 		CheckInBounds();
 	}
 
-	bool CheckInBounds() {
+	public bool CheckInBounds() {
 		float safeDistance = GetSafeDistance();
 		if (transform.position.x >= safeDistance) {
 			return true;
 		} else {
-			print ("OUT OF BOUNDS");
+			//print ("OUT OF BOUNDS");
 			return false;
 		}
 	}
