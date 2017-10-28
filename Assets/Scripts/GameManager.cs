@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 	public List<GameObject> floor = new List<GameObject>(15);
-	private Queue<GameObject> floorTiles = new Queue<GameObject>(floor);
+	//private Queue<GameObject> floorTiles = new Queue<GameObject>(floor);
 	public Camera cam;
 	// Use this for initialization
 	void Start () {
@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour {
 		//for each element in the list
 			//if the element is not visible
 				// remove it from the list
-		if(true) //get from check camera
-		float xshift = cam.ViewportToWorldPoint(new Vector3(1,.5f,0)).x;
+		//if(true) //get from check camera
+		//float xshift = cam.ViewportToWorldPoint(new Vector3(1,.5f,0)).x;
 		//Debug.Log(xshift);
 		
 	}
