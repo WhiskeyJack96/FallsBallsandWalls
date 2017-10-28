@@ -5,26 +5,33 @@ using UnityEngine;
 
 
 public class Player1 : MonoBehaviour{
-        private float v_MaxSize = 50f;                    // The maximum radius of the ball.
-        private float v_MinSize = 5f;                     // The minimum radius of the ball.
-        private Rigidbody2D FallBall;                     // The ball
+    // The maximum size of the ball.
+    private Vector3 V_MaxRadius = new Vector3(20f,20f,0);
+    // The minimum size of the ball.
+    private Vector3 V_MinRadius = new Vector3(-5f, -5f, 0);
+    // The ball;
+    private Rigidbody2D FallBall;
 
-        //KeyCode key_Increase = KeyCode.W;                  // Press W to increase the size
-        //KeyCode key_Decrease = KeyCode.S;                  // Press S to increase the size  
+    //
+    //
+    private void Awake()
+    {
+        FallBall = GetComponent<Rigidbody2D>();
+    }
 
-        // Use this for initialization
-        void Start(){
-
-        }
-
+    //
     // Update is called once per frame
-        void Update(){
-        // Widen the object by 0.1
-        //if (Input.GetKeyDown("W")){
-            //Event e = Event.current;
-            //if (){
-                FallBall.transform.localScale = new Vector3(0.1f, 0.1f, 0);
-            //}
-        //}
+    void Update()
+    {        
+        // Widen or Narrow the object by 0.1
+        if (Input.GetKeyDown(KeyCode.W) & (FallBall.transform.lossyScale.magnitude <= V_MaxRadius.magnitude))
+        {
+            FallBall.transform.localScale += new Vector3(0.1f, 0.1f, 0);
         }
+        else if (Input.GetKeyDown(KeyCode.S) & (FallBall.transform.lossyScale.magnitude >= V_MinRadius.magnitude))
+        {
+            FallBall.transform.localScale += new Vector3(-0.1f, -0.1f, 0);
+        }
+    
+    }
 }
