@@ -48,7 +48,7 @@ public class Player2Controller : MonoBehaviour {
 			if (caveClone != null)
 			{
 				caveClone.transform.localScale += new Vector3(0, 1, 0) * scaleSpeed * Time.deltaTime;
-				caveClone.transform.position -= new Vector3 (0, 1, 0) * scaleSpeed * Time.deltaTime * 2;
+				caveClone.transform.position -= new Vector3 (0, 1, 0) * scaleSpeed * Time.deltaTime / 2;
 			}
 
 			money -= extraCost;
