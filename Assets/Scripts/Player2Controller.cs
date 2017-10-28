@@ -9,9 +9,14 @@ public class Player2Controller : MonoBehaviour {
 	public int money = 0;
 	public int caveCost = 20;
 	public int holeCost = 20;
+	public int extraCost = 5;
+	public float scaleSpeed = 2.0f;
+	public OffscreenCheck playerMove;
 
 	private float lastTime;
 	private float deltaTime;
+	private GameObject caveClone;
+	private int x = 0;
 
 	// Use this for initialization
 	void Start () 
@@ -32,8 +37,20 @@ public class Player2Controller : MonoBehaviour {
 		 
 		if(Input.GetKeyDown(KeyCode.LeftArrow) && (money >= caveCost))
 		{
-			Instantiate (cave, new Vector3 (0, 1, 0), new Quaternion (0, 0, 0, 0));
+			caveClone = Instantiate (cave, new Vector3 (x, 1, 0), new Quaternion (0, 0, 0, 0));
+			caveClone.transform.parent = cave.transform;
 			money -= caveCost;
+			x += 5;
+		}
+
+		if (Input.GetKey (KeyCode.LeftArrow) && (money >= extraCost) && caveClone.transform.localScale.x <= 10)
+		{
+			if (caveClone != null)
+			{
+				caveClone.transform.localScale += new Vector3(1, 0, 0) * scaleSpeed * Time.deltaTime;
+			}
+
+			money -= extraCost;
 		}
 
 		if (Input.GetKeyDown (KeyCode.DownArrow) && (money >= holeCost))
