@@ -37,17 +37,18 @@ public class Player2Controller : MonoBehaviour {
 		 
 		if(Input.GetKeyDown(KeyCode.LeftArrow) && (money >= caveCost))
 		{
-			caveClone = Instantiate (cave, new Vector3 (x, 1, 0), new Quaternion (0, 0, 0, 0));
+			caveClone = Instantiate (cave, new Vector3 (x, 3, 0), new Quaternion (0, 0, 0, 0));
 			caveClone.transform.parent = cave.transform;
 			money -= caveCost;
 			x += 5;
 		}
 
-		if (Input.GetKey (KeyCode.LeftArrow) && (money >= extraCost) && caveClone.transform.localScale.x <= 10)
+		if (Input.GetKey (KeyCode.LeftArrow) && (money >= extraCost) && (caveClone.transform.localScale.y <= 8))
 		{
 			if (caveClone != null)
 			{
-				caveClone.transform.localScale += new Vector3(1, 0, 0) * scaleSpeed * Time.deltaTime;
+				caveClone.transform.localScale += new Vector3(0, 1, 0) * scaleSpeed * Time.deltaTime;
+				caveClone.transform.position -= new Vector3 (0, 1, 0) * scaleSpeed * Time.deltaTime * 2;
 			}
 
 			money -= extraCost;
