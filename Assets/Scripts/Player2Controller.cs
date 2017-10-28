@@ -47,8 +47,7 @@ public class Player2Controller : MonoBehaviour {
 			caveTop.parent = caveClone.transform.GetChild (0);
 			money -= caveCost;
 		}
-
-		if (Input.GetKey (KeyCode.LeftArrow) && (money >= extraCost) && (caveTop.localScale.y <= maxCave))
+		else if (Input.GetKey (KeyCode.LeftArrow) && (money >= extraCost) && (caveTop.localScale.y <= maxCave))
 		{
 			if (caveClone != null)
 			{
@@ -65,8 +64,7 @@ public class Player2Controller : MonoBehaviour {
 			bumpClone.transform.parent = bump.transform;
 			money -= caveCost;
 		}
-
-		if (Input.GetKey (KeyCode.RightArrow) && (money >= extraCost) && (bumpClone.transform.localScale.y <= maxBump))
+		else if (Input.GetKey (KeyCode.RightArrow) && (money >= extraCost) && (bumpClone.transform.localScale.y <= maxBump))
 		{
 			if (bumpClone != null)
 			{
