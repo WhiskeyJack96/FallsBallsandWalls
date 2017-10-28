@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
 
-	private float accel = 0.00005f;
+	private float accel = 0.0001f;
 	private float vel = 0.005f;
 
 	void FixedUpdate() {
