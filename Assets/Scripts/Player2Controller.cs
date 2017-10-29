@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Player2Controller : MonoBehaviour {
 
 	public GameObject cave;
@@ -27,6 +28,7 @@ public class Player2Controller : MonoBehaviour {
     private GameObject holeClone;
     private Transform child_hole_right;
     private Transform child_hole_left;
+    public TextUpdater text;
 
     public GameManager gm;
 
@@ -47,6 +49,8 @@ public class Player2Controller : MonoBehaviour {
 			money++;
 		}
 		 
+		text.updateText(money.ToString());
+
 		if(Input.GetKeyDown(KeyCode.LeftArrow) && (money >= caveCost))
 		{
 			caveClone = Instantiate (cave, new Vector3 (-20, 0, 0), new Quaternion (0, 0, 0, 0));
@@ -117,6 +121,7 @@ public class Player2Controller : MonoBehaviour {
         {
         	gm.addToQueue(caveClone);
         }
+
     }
 }
 
