@@ -11,7 +11,11 @@ public class Player1SizeChanging : MonoBehaviour{
     private Vector3 V_MinRadius = new Vector3(1f, 1f, 0);
     // The ball;
     private Rigidbody2D FallBall;
-	public int jumpStrength;
+	public int charges = 0;
+
+	public int jumpStrength = 100;
+	public int maxCharge = 3;
+	public float waitTime = 5;
     //
     //
     private void Awake()
@@ -19,8 +23,17 @@ public class Player1SizeChanging : MonoBehaviour{
         FallBall = GetComponent<Rigidbody2D>();
     }
 
+	void Start()
+	{
+		StartCoroutine(Recharge(waitTime));
+	}
+
     //
     // Update is called once per frame
+	void Update()
+	{
+		
+	}
     void FixedUpdate()
     {   
         // Widen the object by 0.5 (Press W) or by 5 (Press W + LeftShift)
@@ -40,9 +53,10 @@ public class Player1SizeChanging : MonoBehaviour{
             }
         }
         // Narrow the object by 0.5 (Press S) or by 5 (Press S + LeftShift)
-		if (Input.GetKeyDown (KeyCode.S))
+		if (Input.GetKeyDown (KeyCode.S) && charges > 0)
 		{
-			FallBall.AddForce (Vector2.up * jumpStrength);
+			FallBall.AddForce (new Vector3(1, 1, 0) * jumpStrength * FallBall.transform.localScale.x / V_MaxRadius.x);
+			charges--;
 		}
 
         if (Input.GetKey(KeyCode.S))
@@ -60,6 +74,11 @@ public class Player1SizeChanging : MonoBehaviour{
                 FallBall.transform.localScale = V_MinRadius;
             }
         }
-
     }
+
+	IEnumerator Recharge(float time)
+	{
+		charges = maxCharge;
+		yield return new WaitForSecondsRealtime(time);
+	}
 }
