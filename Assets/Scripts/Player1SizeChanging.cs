@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class Player1SizeChanging : MonoBehaviour{
     // The maximum size of the ball
-    private Vector3 V_MaxRadius = new Vector3(12.2f, 12.2f, 0);
+    private Vector3 V_MaxRadius = new Vector3(1f, 1f, 0);
     // The minimum size of the ball
-    private Vector3 V_MinRadius = new Vector3(1f, 1f, 0);
+    private Vector3 V_MinRadius = new Vector3(0.1f, 0.1f, 0);
     // The ball;
     private Rigidbody2D FallBall;
 	public int charges = 0;
@@ -47,11 +47,11 @@ public class Player1SizeChanging : MonoBehaviour{
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                FallBall.transform.localScale += new Vector3(5f, 5f, 0);
+                FallBall.transform.localScale += new Vector3(0.5f, .5f, 0);
             }
             else
             {
-                FallBall.transform.localScale += new Vector3(0.5f, 0.5f, 0);
+                FallBall.transform.localScale += new Vector3(0.05f, 0.05f, 0);
             }
             if (FallBall.transform.lossyScale.x > V_MaxRadius.x)
             {
