@@ -254,13 +254,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 164872883}
-  m_LocalRotation: {x: 0, y: 0, z: 0.2174619, w: 0.97606885}
-  m_LocalPosition: {x: -13.29, y: 1.9, z: -10}
+  m_LocalRotation: {x: 0, y: 0, z: 0.19509031, w: 0.98078537}
+  m_LocalPosition: {x: -11.88, y: 2.23, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 25.12}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 22.5}
 --- !u!114 &164872888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +375,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2
+  orthographic size: 4.5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -396,13 +396,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 468400907}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 0.07, z: -10}
+  m_LocalRotation: {x: 0, y: 0, z: 0.19509031, w: 0.98078537}
+  m_LocalPosition: {x: -23.09, y: 0.07, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 22.5}
 --- !u!1001 &508128954
 Prefab:
   m_ObjectHideFlags: 0
@@ -1153,6 +1153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39a6699bb93ae9144b2fbc6b71b38ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxVal: 12.2
+  minVal: 1
+  quickChange: 5
+  slowChange: 0.5
   charges: 0
   jumpStrength: 50
   maxCharge: 3
@@ -1424,12 +1428,12 @@ MonoBehaviour:
   cave: {fileID: 958786758}
   hole: {fileID: 1426528515}
   bump: {fileID: 884131491}
-  money: 500
+  money: 5000
   caveCost: 20
   holeCost: 20
   bumpCost: 20
   extraCost: 5
-  scaleSpeed: 2
+  scaleSpeed: 1
   playerMove: {fileID: 0}
   maxCave: 3.5
   maxBump: 2
@@ -1641,6 +1645,10 @@ Prefab:
     - target: {fileID: 4914577889737814, guid: b56cefaece365d34a9331ef0a85d77fe, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914577889737814, guid: b56cefaece365d34a9331ef0a85d77fe, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b56cefaece365d34a9331ef0a85d77fe, type: 2}

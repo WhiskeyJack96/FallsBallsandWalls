@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour {
 		int dqNum = checkOffScreen();
 		for(int i=0;i<dqNum;i++)
 		{
-			print(floorTiles.Count);
 			OffscreenCheck oldTile = floorTiles.Dequeue();
 			Destroy(oldTile.gameObject);
 			OffscreenCheck temp;
