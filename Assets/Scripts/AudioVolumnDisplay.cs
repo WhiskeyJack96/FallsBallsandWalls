@@ -13,6 +13,6 @@ public class AudioVolumnDisplay : MonoBehaviour {
     
     public void SetSliderValue(float SliderValue)
     {
-        AudioText.text = Mathf.Round(SliderValue).ToString();
+        AudioText.text = Mathf.Round(SliderValue * 100).ToString();
     }
 }
