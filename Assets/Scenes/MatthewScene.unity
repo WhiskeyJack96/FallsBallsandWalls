@@ -398,16 +398,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &837397157 stripped
-Rigidbody2D:
-  m_PrefabParentObject: {fileID: 50042674467902362, guid: 6e11a502f4ff2e84e917621cf9492187,
-    type: 2}
-  m_PrefabInternal: {fileID: 1864696473}
---- !u!4 &837397160 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4670587308156762, guid: 6e11a502f4ff2e84e917621cf9492187,
-    type: 2}
-  m_PrefabInternal: {fileID: 1864696473}
 --- !u!1001 &1182837180
 Prefab:
   m_ObjectHideFlags: 0
@@ -458,72 +448,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9e5705150fc3de4daec84627ac2ea4e, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1196774685
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1196774686}
-  - component: {fileID: 1196774687}
-  - component: {fileID: 1196774688}
-  m_Layer: 2
-  m_Name: Player1Top
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1196774686
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1196774685}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.082, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 837397160}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1196774687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1196774685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6289598874ba454499ce78c241f4fdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FallBall: {fileID: 837397157}
-  temp_max: {x: 0, y: 0, z: 27}
-  mask:
-    serializedVersion: 2
-    m_Bits: 4294967291
---- !u!50 &1196774688
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1196774685}
-  m_BodyType: 0
-  m_Simulated: 0
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1396618460 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1122694401641722, guid: e9e5705150fc3de4daec84627ac2ea4e,
@@ -885,54 +809,44 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4670587308156762, guid: 6e11a502f4ff2e84e917621cf9492187, type: 2}
+    - target: {fileID: 4720742400406670, guid: 6bc84c55f6aad194bb806c6d5bf08b3e, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2.91
       objectReference: {fileID: 0}
-    - target: {fileID: 4670587308156762, guid: 6e11a502f4ff2e84e917621cf9492187, type: 2}
+    - target: {fileID: 4720742400406670, guid: 6bc84c55f6aad194bb806c6d5bf08b3e, type: 2}
       propertyPath: m_LocalPosition.y
       value: 1.38
       objectReference: {fileID: 0}
-    - target: {fileID: 4670587308156762, guid: 6e11a502f4ff2e84e917621cf9492187, type: 2}
+    - target: {fileID: 4720742400406670, guid: 6bc84c55f6aad194bb806c6d5bf08b3e, type: 2}
       propertyPath: m_LocalPosition.z
       value: -10.030033
       objectReference: {fileID: 0}
-    - target: {fileID: 4670587308156762, guid: 6e11a502f4ff2e84e917621cf9492187, type: 2}
+    - target: {fileID: 4720742400406670, guid: 6bc84c55f6aad194bb806c6d5bf08b3e, type: 2}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4670587308156762, guid: 6e11a502f4ff2e84e917621cf9492187, type: 2}
+    - target: {fileID: 4720742400406670, guid: 6bc84c55f6aad194bb806c6d5bf08b3e, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4670587308156762, guid: 6e11a502f4ff2e84e917621cf9492187, type: 2}
+    - target: {fileID: 4720742400406670, guid: 6bc84c55f6aad194bb806c6d5bf08b3e, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4670587308156762, guid: 6e11a502f4ff2e84e917621cf9492187, type: 2}
+    - target: {fileID: 4720742400406670, guid: 6bc84c55f6aad194bb806c6d5bf08b3e, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4670587308156762, guid: 6e11a502f4ff2e84e917621cf9492187, type: 2}
+    - target: {fileID: 4720742400406670, guid: 6bc84c55f6aad194bb806c6d5bf08b3e, type: 2}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 212538373293977940, guid: 6e11a502f4ff2e84e917621cf9492187,
-        type: 2}
-      propertyPath: m_DrawMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114268550188338004, guid: 6e11a502f4ff2e84e917621cf9492187,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1552068617882742, guid: 6e11a502f4ff2e84e917621cf9492187, type: 2}
-      propertyPath: m_Layer
-      value: 2
+    - target: {fileID: 1055931484552164, guid: 6bc84c55f6aad194bb806c6d5bf08b3e, type: 2}
+      propertyPath: m_Name
+      value: Player1Ball
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 6e11a502f4ff2e84e917621cf9492187, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 6bc84c55f6aad194bb806c6d5bf08b3e, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2022430072
 GameObject:
@@ -1031,7 +945,7 @@ SpriteRenderer:
   m_Size: {x: 0.5, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1 &2109186861
 GameObject:
@@ -1130,5 +1044,5 @@ SpriteRenderer:
   m_Size: {x: 0.5, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
