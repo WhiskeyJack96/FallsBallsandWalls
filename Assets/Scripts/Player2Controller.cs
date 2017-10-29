@@ -16,12 +16,17 @@ public class Player2Controller : MonoBehaviour {
 	public OffscreenCheck playerMove;
 	public float maxCave = 1.25f;
 	public float maxBump = 2.0f;
+    public GameObject hole_left;
+    public GameObject hole_right;
 
 	private float lastTime;
 	private float deltaTime;
 	private GameObject caveClone;
 	private Transform caveTop;
 	private GameObject bumpClone;
+    private GameObject holeClone;
+    private Transform child_hole_right;
+    private Transform child_hole_left;
 
 	// Use this for initialization
 	void Start () 
@@ -75,10 +80,29 @@ public class Player2Controller : MonoBehaviour {
 			money -= extraCost;
 		}
 
-		if (Input.GetKeyDown (KeyCode.DownArrow) && (money >= holeCost))
-		{
-			Instantiate (hole, new Vector3 (5, 1, 0), new Quaternion (0, 0, 0, 0));
-			money -= holeCost;
-		}
-	}
+        if (Input.GetKeyDown(KeyCode.DownArrow) && (money >= holeCost))
+        {
+            holeClone = Instantiate(hole, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+            money -= holeCost;
+            child_hole_left = holeClone.gameObject.transform.GetChild(0);
+            child_hole_right = holeClone.gameObject.transform.GetChild(1);
+
+        }
+
+        if (Input.GetKey(KeyCode.DownArrow) && (money >= extraCost) && (Mathf.Abs(child_hole_left.position.x - child_hole_right.position.x) < 4))
+        {
+
+            if (holeClone != null)
+            {
+
+                child_hole_left.position -= new Vector3(.05f, 0, 0);
+
+                child_hole_right.position += new Vector3(.05f, 0, 0);
+
+
+
+            }
+        }
+    }
 }
+
