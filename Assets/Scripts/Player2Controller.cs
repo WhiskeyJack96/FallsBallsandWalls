@@ -109,20 +109,23 @@ public class Player2Controller : MonoBehaviour {
 
             }
         }
-        if(Input.GetKeyUp(KeyCode.DownArrow))
+        if(Input.GetKeyUp(KeyCode.DownArrow) && holeClone !=null)
         {
         	holeClone.transform.position = new Vector3(-30,0,0);
         	gm.addToQueue(holeClone);
+        	holeClone=null;
         }
-        if(Input.GetKeyUp(KeyCode.RightArrow))
+        if(Input.GetKeyUp(KeyCode.RightArrow) && bumpClone !=null)
         {
         	bumpClone.transform.position = new Vector3(-30,0,0);
         	gm.addToQueue(bumpClone);
+        	bumpClone=null;
         }
-        if(Input.GetKeyUp(KeyCode.LeftArrow))
+        if(Input.GetKeyUp(KeyCode.LeftArrow) && caveClone !=null)
         {
         	caveClone.transform.position = new Vector3(-30,0,0);
         	gm.addToQueue(caveClone);
+        	caveClone=null;
         }
 
     }
