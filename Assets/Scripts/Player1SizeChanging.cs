@@ -11,7 +11,7 @@ public class Player1SizeChanging : MonoBehaviour{
     private Vector3 V_MinRadius = new Vector3(1f, 1f, 0);
     // The ball;
     private Rigidbody2D FallBall;
-
+	public int jumpStrength;
     //
     //
     private void Awake()
@@ -40,6 +40,11 @@ public class Player1SizeChanging : MonoBehaviour{
             }
         }
         // Narrow the object by 0.5 (Press S) or by 5 (Press S + LeftShift)
+		if (Input.GetKeyDown (KeyCode.S))
+		{
+			FallBall.AddForce (Vector2.up * jumpStrength);
+		}
+
         if (Input.GetKey(KeyCode.S))
         {
             if (Input.GetKey(KeyCode.LeftShift))
