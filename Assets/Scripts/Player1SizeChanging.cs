@@ -4,11 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class Player1SizeChanging : MonoBehaviour{
+	public float maxVal = 12.2f;
+	public float minVal = 1f;
+	public float quickChange = 5f;
+	public float slowChange = 0.5f;
+
     // The maximum size of the ball
-    private Vector3 V_MaxRadius = new Vector3(1f, 1f, 0);
+	private Vector3 V_MaxRadius;
     // The minimum size of the ball
-    private Vector3 V_MinRadius = new Vector3(0.1f, 0.1f, 0);
+	private Vector3 V_MinRadius;
     // The ball;
     private Rigidbody2D FallBall;
 	public int charges = 0;
@@ -25,6 +31,8 @@ public class Player1SizeChanging : MonoBehaviour{
 
 	void Start()
 	{
+		V_MaxRadius = new Vector3(maxVal, maxVal, 0);
+		V_MinRadius = new Vector3(minVal, minVal, 0);
 		charges = maxCharge;
 		StartCoroutine(Recharge());
 	}
@@ -47,11 +55,11 @@ public class Player1SizeChanging : MonoBehaviour{
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                FallBall.transform.localScale += new Vector3(0.5f, .5f, 0);
+				FallBall.transform.localScale += new Vector3(quickChange, quickChange, 0);
             }
             else
             {
-                FallBall.transform.localScale += new Vector3(0.05f, 0.05f, 0);
+				FallBall.transform.localScale += new Vector3(slowChange, slowChange, 0);
             }
             if (FallBall.transform.lossyScale.x > V_MaxRadius.x)
             {
@@ -64,11 +72,11 @@ public class Player1SizeChanging : MonoBehaviour{
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                FallBall.transform.localScale -= new Vector3(5f, 5f, 0);
+				FallBall.transform.localScale -= new Vector3(quickChange, quickChange, 0);
             }
             else
             {
-                FallBall.transform.localScale -= new Vector3(0.5f, 0.5f, 0);
+				FallBall.transform.localScale -= new Vector3(slowChange, slowChange, 0);
             }
             if (FallBall.transform.lossyScale.x < V_MinRadius.x)
             {
