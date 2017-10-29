@@ -53,7 +53,7 @@ public class Player2Controller : MonoBehaviour {
 
 		if(Input.GetKeyDown(KeyCode.LeftArrow) && (money >= caveCost))
 		{
-			caveClone = Instantiate (cave, new Vector3 (-20, 0, 0), new Quaternion (0, 0, 0, 0));
+			caveClone = Instantiate (cave, new Vector3 (-20, -1, 0), new Quaternion (0, 0, 0, 0));
 			caveTop = caveClone.transform.GetChild (0);
 			caveTop.parent = caveClone.transform.GetChild (0);
 			money -= caveCost;
@@ -109,17 +109,23 @@ public class Player2Controller : MonoBehaviour {
 
             }
         }
-        if(Input.GetKeyUp(KeyCode.DownArrow))
+        if(Input.GetKeyUp(KeyCode.DownArrow) && holeClone !=null)
         {
+        	holeClone.transform.position = new Vector3(-30,0,0);
         	gm.addToQueue(holeClone);
+        	holeClone=null;
         }
-        if(Input.GetKeyUp(KeyCode.RightArrow))
+        if(Input.GetKeyUp(KeyCode.RightArrow) && bumpClone !=null)
         {
+        	bumpClone.transform.position = new Vector3(-30,0,0);
         	gm.addToQueue(bumpClone);
+        	bumpClone=null;
         }
-        if(Input.GetKeyUp(KeyCode.LeftArrow))
+        if(Input.GetKeyUp(KeyCode.LeftArrow) && caveClone !=null)
         {
+        	caveClone.transform.position = new Vector3(-30,0,0);
         	gm.addToQueue(caveClone);
+        	caveClone=null;
         }
 
     }

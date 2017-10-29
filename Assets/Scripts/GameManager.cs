@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 	public List<OffscreenCheck> floor = new List<OffscreenCheck>(15);
-	private Queue<OffscreenCheck> floorTiles = new Queue<OffscreenCheck>(15);
+	private Queue<OffscreenCheck> floorTiles = new Queue<OffscreenCheck>();
 	private Queue<OffscreenCheck> secondplayerqueue = new Queue<OffscreenCheck>();
 	public Camera cam;
 	public OffscreenCheck blank;
-	public OffscreenCheck lastQueued;
+	public Vector3 lastQueued;
 	public float tileSize;
 	// Use this for initialization
 	void Start () {
 		foreach(OffscreenCheck i in floor)
 		{
+			if(i!=null)
+			{
 			floorTiles.Enqueue(i);
+			lastQueued = new Vector3(i.transform.position.x,i.transform.position.y,i.transform.position.z);
+			}
 		}
+		
+		
+		
 	}
 	
 	// Update is called once per frame
@@ -23,6 +30,7 @@ public class GameManager : MonoBehaviour {
 		int dqNum = checkOffScreen();
 		for(int i=0;i<dqNum;i++)
 		{
+			print(floorTiles.Count);
 			OffscreenCheck oldTile = floorTiles.Dequeue();
 			Destroy(oldTile.gameObject);
 			OffscreenCheck temp;
@@ -30,16 +38,16 @@ public class GameManager : MonoBehaviour {
 			{
 				print("im run");
 				temp = secondplayerqueue.Dequeue();
-				temp.transform.position = new Vector3(lastQueued.transform.position.x + tileSize,.5f + temp.transform.position.y, lastQueued.transform.position.z);
+				temp.transform.position = new Vector3(lastQueued.x + tileSize,.5f , lastQueued.z);
 				floorTiles.Enqueue(temp);
 				temp.enabled = true;
 			}
 			else
 			{
-				temp = Instantiate(blank, new Vector3(lastQueued.transform.position.x + tileSize,.5f,lastQueued.transform.position.z), Quaternion.identity);
+				temp = Instantiate(blank, new Vector3(lastQueued.x + tileSize,.5f,lastQueued.z), Quaternion.identity);
 				floorTiles.Enqueue(temp);
 			}
-			lastQueued = temp;
+			lastQueued = new Vector3(temp.transform.position.x, temp.transform.position.y, temp.transform.position.z );
 		}
 		
 	}
