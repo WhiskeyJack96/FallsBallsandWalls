@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 	public List<OffscreenCheck> floor = new List<OffscreenCheck>(15);
-	private Queue<OffscreenCheck> floorTiles = new Queue<OffscreenCheck>(15);
+	private Queue<OffscreenCheck> floorTiles = new Queue<OffscreenCheck>();
 	private Queue<OffscreenCheck> secondplayerqueue = new Queue<OffscreenCheck>();
 	public Camera cam;
 	public OffscreenCheck blank;
@@ -14,8 +14,12 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		foreach(OffscreenCheck i in floor)
 		{
+			if(i!=null)
+			{
 			floorTiles.Enqueue(i);
+			}
 		}
+		//floorTiles.TrimExcess();
 	}
 	
 	// Update is called once per frame
@@ -23,6 +27,7 @@ public class GameManager : MonoBehaviour {
 		int dqNum = checkOffScreen();
 		for(int i=0;i<dqNum;i++)
 		{
+			print(floorTiles.Count);
 			OffscreenCheck oldTile = floorTiles.Dequeue();
 			Destroy(oldTile.gameObject);
 			OffscreenCheck temp;
