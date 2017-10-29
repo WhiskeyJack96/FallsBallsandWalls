@@ -25,15 +25,21 @@ public class Player1SizeChanging : MonoBehaviour{
 
 	void Start()
 	{
-		StartCoroutine(Recharge(waitTime));
+		charges = maxCharge;
+		StartCoroutine(Recharge());
 	}
 
     //
     // Update is called once per frame
 	void Update()
 	{
-		
+		if (Input.GetKeyDown (KeyCode.S) && charges > 0)
+		{
+			FallBall.AddForce (new Vector3(1, 1, 0) * jumpStrength * FallBall.transform.localScale.x / V_MaxRadius.x);
+			charges--;
+		}
 	}
+
     void FixedUpdate()
     {   
         // Widen the object by 0.5 (Press W) or by 5 (Press W + LeftShift)
@@ -53,11 +59,6 @@ public class Player1SizeChanging : MonoBehaviour{
             }
         }
         // Narrow the object by 0.5 (Press S) or by 5 (Press S + LeftShift)
-		if (Input.GetKeyDown (KeyCode.S) && charges > 0)
-		{
-			FallBall.AddForce (new Vector3(1, 1, 0) * jumpStrength * FallBall.transform.localScale.x / V_MaxRadius.x);
-			charges--;
-		}
 
         if (Input.GetKey(KeyCode.S))
         {
@@ -76,9 +77,12 @@ public class Player1SizeChanging : MonoBehaviour{
         }
     }
 
-	IEnumerator Recharge(float time)
+	IEnumerator Recharge()
 	{
-		charges = maxCharge;
-		yield return new WaitForSecondsRealtime(time);
+		while (true)
+		{
+			yield return new WaitForSeconds (waitTime);
+			charges = maxCharge;
+		}
 	}
 }

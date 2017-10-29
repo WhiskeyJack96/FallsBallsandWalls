@@ -49,7 +49,7 @@ public class Player2Controller : MonoBehaviour {
 			money++;
 		}
 		 
-		text.updateText(money.ToString());
+		//text.updateText(money.ToString());
 
 		if(Input.GetKeyDown(KeyCode.LeftArrow) && (money >= caveCost))
 		{
