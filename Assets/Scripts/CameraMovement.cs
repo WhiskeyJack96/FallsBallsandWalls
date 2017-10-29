@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
 
-	private float accel = 0.0001f;
-	private float vel = 0.005f;
+	private float accel = 0.00001f;
+	private float vel = 0.05f;
 
 	void FixedUpdate() {
 		// Increase x pos

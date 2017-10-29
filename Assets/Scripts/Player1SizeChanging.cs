@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Player1SizeChanging : MonoBehaviour{
     // The maximum size of the ball
-    private Vector3 V_MaxRadius = new Vector3(11.2f, 11.2f, 0);
+    private Vector3 V_MaxRadius = new Vector3(12.2f, 12.2f, 0);
     // The minimum size of the ball
     private Vector3 V_MinRadius = new Vector3(1f, 1f, 0);
     // The ball;

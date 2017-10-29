@@ -28,12 +28,15 @@ public class GameManager : MonoBehaviour {
 			OffscreenCheck temp;
 			if(secondplayerqueue.Count>0)
 			{
+				print("im run");
 				temp = secondplayerqueue.Dequeue();
+				temp.transform.position = new Vector3(lastQueued.transform.position.x + tileSize,.5f + temp.transform.position.y, lastQueued.transform.position.z);
 				floorTiles.Enqueue(temp);
+				temp.enabled = true;
 			}
 			else
 			{
-				temp = Instantiate(blank, new Vector3(lastQueued.transform.position.x + tileSize,lastQueued.transform.position.y,lastQueued.transform.position.z), Quaternion.identity);
+				temp = Instantiate(blank, new Vector3(lastQueued.transform.position.x + tileSize,.5f,lastQueued.transform.position.z), Quaternion.identity);
 				floorTiles.Enqueue(temp);
 			}
 			lastQueued = temp;
@@ -57,5 +60,10 @@ public class GameManager : MonoBehaviour {
 	void queueMove(OffscreenCheck G)
 	{
 		secondplayerqueue.Enqueue(G);
+	}
+	public void addToQueue(GameObject G)
+	{
+		OffscreenCheck g = G.GetComponent<OffscreenCheck>();
+		secondplayerqueue.Enqueue(g);
 	}
 }
