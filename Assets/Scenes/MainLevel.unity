@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 723090710}
   - component: {fileID: 723090711}
   - component: {fileID: 723090712}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Size_Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,7 +620,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 723090709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0.995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1511826548}
@@ -1267,7 +1267,7 @@ GameObject:
   - component: {fileID: 1511826545}
   - component: {fileID: 1511826544}
   - component: {fileID: 1511826549}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: p1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
