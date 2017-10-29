@@ -6,9 +6,9 @@ using UnityEngine;
 
 
 public class Player1SizeChanging : MonoBehaviour{
-	public float maxVal = 12.2f;
-	public float minVal = 1f;
-	public float quickChange = 5f;
+	public float maxVal = 7.3f;
+	public float minVal = 1.5f;
+	public float quickChange = 6f;
 	public float slowChange = 0.5f;
 
     // The maximum size of the ball
@@ -19,7 +19,7 @@ public class Player1SizeChanging : MonoBehaviour{
     private Rigidbody2D FallBall;
 	public int charges = 0;
 
-	public int jumpStrength = 100;
+	public int jumpStrength = 75;
 	public int maxCharge = 3;
 	public float waitTime = 5;
     //
@@ -41,15 +41,16 @@ public class Player1SizeChanging : MonoBehaviour{
     // Update is called once per frame
 	void Update()
 	{
-		if (Input.GetKeyDown (KeyCode.S) && charges > 0)
-		{
-			FallBall.AddForce (new Vector3(1, 1, 0) * jumpStrength * FallBall.transform.localScale.x / V_MaxRadius.x);
-			charges--;
-		}
+	
 	}
 
     void FixedUpdate()
     {   
+        if (Input.GetKeyDown (KeyCode.S) && charges > 0)
+        {
+            FallBall.AddForce (new Vector3(1, 1, 0) * jumpStrength * FallBall.transform.localScale.x / V_MaxRadius.x);
+            charges--;
+        }
         // Widen the object by 0.5 (Press W) or by 5 (Press W + LeftShift)
         if (Input.GetKey(KeyCode.W))// & (FallBall.transform.lossyScale.magnitude <= V_MaxRadius.magnitude))
         {
