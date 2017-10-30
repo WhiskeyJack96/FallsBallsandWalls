@@ -13,9 +13,8 @@ public class MoneyChange : MonoBehaviour
         //Player2 = GetComponent<Player2Controller>();
     }
 
-    public void MoneyDisplay()
+    public void Update()
     {
-        print("ddd");
         MoneyText.text = "$ " + Player2.money.ToString();
     }
 }
