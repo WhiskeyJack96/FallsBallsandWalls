@@ -5,7 +5,6 @@ using UnityEngine;
 public class SizeCheckPlayer1 : MonoBehaviour {
 
     public Rigidbody2D FallBall;
-    public Vector3 temp_max = new Vector3(0, 0, 27);
     public LayerMask mask = -1;
     //
     //
@@ -22,29 +21,23 @@ public class SizeCheckPlayer1 : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(0, 1), .1f, mask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(0, 1), 10f, mask);
 
 
         
         if (hit.collider != null)
         {
-            print(temp_max);
-            
-            if (FallBall.transform.localScale.y > temp_max.y)
+            print(hit.distance);
+
+            float ballRadius = FallBall.gameObject.GetComponent<CircleCollider2D>().radius;
+            float ballScaleY = FallBall.gameObject.GetComponent<Transform>().localScale.y;
+            float trueRadius = ballRadius * ballScaleY;
+            print(ballRadius);
+            //print();
+            if (hit.distance< trueRadius)
             {
-                if (temp_max.z == 27)
-                {
-                    temp_max = FallBall.transform.localScale;
-
-                }
-                FallBall.transform.localScale = temp_max;
+                FallBall.transform.localScale= new Vector3(hit.distance, hit.distance,0f);
             }
-            
-
-        }
-        else
-        {
-            temp_max = new Vector3(0, 0, 27);
         }
 	}
 }
