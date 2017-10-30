@@ -5,6 +5,7 @@ using UnityEngine;
 public class Rotate : MonoBehaviour {
     Transform trans;
     public Rigidbody2D FallBall;
+    public Transform Pause;
 
     void Awake()
     {
@@ -18,7 +19,9 @@ public class Rotate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        trans.Rotate(0, 0, -10);
+        if (!Pause.gameObject.activeSelf) {
+            trans.Rotate(0, 0, -10);
+        }
 
 
     }
