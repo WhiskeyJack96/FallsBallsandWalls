@@ -3774,7 +3774,7 @@ RectTransform:
   m_GameObject: {fileID: 1192568032}
   m_LocalRotation: {x: 0, y: 0, z: 0.08878995, w: 0.99605036}
   m_LocalPosition: {x: -11.98, y: 1.48, z: 90}
-  m_LocalScale: {x: 0.014234875, y: 0.014234875, z: 0.014234875}
+  m_LocalScale: {x: 0.0063191154, y: 0.0063191154, z: 0.0063191154}
   m_Children:
   - {fileID: 1072674806}
   - {fileID: 1994122442}
@@ -3811,8 +3811,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1195372541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 259.988, y: 144.94604, z: 6.8564453}
-  m_LocalScale: {x: 0.67125, y: 0.67125, z: 0.67125}
+  m_LocalPosition: {x: 652.988, y: 320.94604, z: 6.8564453}
+  m_LocalScale: {x: 1.65375, y: 1.65375, z: 1.65375}
   m_Children:
   - {fileID: 1419470153}
   - {fileID: 897226490}
@@ -4981,7 +4981,7 @@ MonoBehaviour:
   cave: {fileID: 958786758}
   hole: {fileID: 1426528515}
   bump: {fileID: 884131491}
-  money: 5000
+  money: 300
   caveCost: 20
   holeCost: 20
   bumpCost: 20
