@@ -120,7 +120,7 @@ public class Player1SizeChanging : MonoBehaviour{
 		{
 			UIPanelLose.gameObject.SetActive (true);
 		}
-
+        GameOver = true;
 		Time.timeScale = 0f;
 	}
 }
