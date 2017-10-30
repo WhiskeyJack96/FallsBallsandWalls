@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour {
 			OffscreenCheck temp;
 			if(secondplayerqueue.Count>0)
 			{
-				print("im run");
+				
 				temp = secondplayerqueue.Dequeue();
 				temp.transform.position = new Vector3(lastQueued.x + tileSize,.5f , lastQueued.z);
 				floorTiles.Enqueue(temp);
