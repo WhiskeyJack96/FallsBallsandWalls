@@ -483,6 +483,7 @@ GameObject:
   - component: {fileID: 164872888}
   - component: {fileID: 164872890}
   - component: {fileID: 164872889}
+  - component: {fileID: 164872893}
   - component: {fileID: 164872892}
   - component: {fileID: 164872891}
   m_Layer: 0
@@ -617,6 +618,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIPanel: {fileID: 847934729}
   p: {fileID: 1511826544}
+--- !u!114 &164872893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 164872883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722563685a1ba2f4bb305fef75b473f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &168288135 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1122694401641722, guid: e9e5705150fc3de4daec84627ac2ea4e,
@@ -949,7 +961,7 @@ GameObject:
   - component: {fileID: 345878559}
   - component: {fileID: 345878558}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text_ButtonBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1768,7 +1780,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.8705883, b: 0.5803922, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1783,7 +1795,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 645725202}
+  m_TargetGraphic: {fileID: 1240957558}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1842,8 +1854,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6560fc7746816f64dadcfb660c1dea0f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3762,7 +3774,7 @@ RectTransform:
   m_GameObject: {fileID: 1192568032}
   m_LocalRotation: {x: 0, y: 0, z: 0.08878995, w: 0.99605036}
   m_LocalPosition: {x: -11.98, y: 1.48, z: 90}
-  m_LocalScale: {x: 0.011251758, y: 0.011251758, z: 0.011251758}
+  m_LocalScale: {x: 0.014234875, y: 0.014234875, z: 0.014234875}
   m_Children:
   - {fileID: 1072674806}
   - {fileID: 1994122442}
@@ -3799,8 +3811,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1195372541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 307.488, y: 182.44604, z: 6.8564453}
-  m_LocalScale: {x: 0.79, y: 0.79, z: 0.79}
+  m_LocalPosition: {x: 259.988, y: 144.94604, z: 6.8564453}
+  m_LocalScale: {x: 0.67125, y: 0.67125, z: 0.67125}
   m_Children:
   - {fileID: 1419470153}
   - {fileID: 897226490}
@@ -3882,7 +3894,7 @@ GameObject:
   - component: {fileID: 1240957559}
   - component: {fileID: 1240957558}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextButtonBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5173,7 +5185,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.38823533, b: 0.32156864, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -5188,7 +5200,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1925017391}
+  m_TargetGraphic: {fileID: 345878558}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -5454,7 +5466,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2007825978}
   - component: {fileID: 2007825980}
-  - component: {fileID: 2007825979}
   m_Layer: 5
   m_Name: Slider_Music
   m_TagString: Untagged
@@ -5485,18 +5496,6 @@ RectTransform:
   m_AnchoredPosition: {x: -331.63998, y: 164.14308}
   m_SizeDelta: {x: 317.87, y: 14.11}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2007825979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114420788852936972, guid: d384de967e001f041a20ccbbd9fb7ad7,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2007825977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec8c00e949a39ef48b6457fd74d8bfe4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2007825980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5555,8 +5554,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 638809278}
-        m_MethodName: set_volume
+      - m_Target: {fileID: 164872893}
+        m_MethodName: AudioChange
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
