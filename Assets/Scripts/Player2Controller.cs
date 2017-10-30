@@ -46,7 +46,7 @@ public class Player2Controller : MonoBehaviour {
 		if (deltaTime >= 0.1f)
 		{
 			lastTime = Time.time;
-			money++;
+			money+=5;
 		}
 		 
 		//text.updateText(money.ToString());
@@ -62,8 +62,8 @@ public class Player2Controller : MonoBehaviour {
 		{
 			if (caveClone != null)
 			{
-				caveTop.localScale += new Vector3(0, 1, 0) * scaleSpeed * Time.deltaTime;
-				caveTop.position -= new Vector3 (0, 1, 0) * scaleSpeed * Time.deltaTime / 2;
+				caveTop.localScale += new Vector3(0, 1, 0) *2* scaleSpeed * Time.deltaTime;
+				caveTop.position -= new Vector3 (0, 1, 0) *2* scaleSpeed * Time.deltaTime / 2;
 			}
 
 			money -= extraCost;
@@ -105,7 +105,7 @@ public class Player2Controller : MonoBehaviour {
 
                 child_hole_right.position += new Vector3(.025f, 0, 0);
 
-
+                money-=extraCost;
 
             }
         }

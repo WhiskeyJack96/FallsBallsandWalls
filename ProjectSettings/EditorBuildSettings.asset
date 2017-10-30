@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/WendysScene.unity
     guid: 400d01b09a5770f40a0f3d872447b9a5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/WendysScene_Menu.unity
     guid: b7b6475724021f046b422147615ad6a6
+  - enabled: 1
+    path: Assets/Scenes/MainLevel.unity
+    guid: c056f8744cccad8429cc5a28fed6c039
