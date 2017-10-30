@@ -10,12 +10,24 @@ public class OffscreenCheck : MonoBehaviour {
 
 	public bool CheckInBounds() {
 		float safeDistance = GetSafeDistance();
-		if (transform.position.x >= safeDistance) {
+		if (transform.position.x >= safeDistance) 
+		{
 			return true;
-		} else {
+		} 
+		else
+		{
 			//print ("OUT OF BOUNDS");
 			return false;
 		}
+	}
+
+	public bool CheckRightBorder(){
+		if (transform.position.x >= GetRightBorder())
+		{
+			return true;
+		}
+
+		return false;
 	}
 
 	float GetSafeDistance() {
@@ -30,6 +42,14 @@ public class OffscreenCheck : MonoBehaviour {
 		float camHeight = 2f * cam.orthographicSize;
 		float camWidth = camHeight * cam.aspect;
 		return camPos.x - (camWidth / 2);
+	}
+
+	float GetRightBorder(){
+		Camera cam = Camera.main;
+		Vector3 camPos = cam.gameObject.transform.position;
+		float camHeight = 2f * cam.orthographicSize;
+		float camWidth = camHeight * cam.aspect;
+		return camPos.x + (camWidth / 2);
 	}
 
 }

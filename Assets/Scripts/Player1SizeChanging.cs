@@ -6,6 +6,8 @@ using UnityEngine;
 
 
 public class Player1SizeChanging : MonoBehaviour{
+	public Transform UIPanelLose;
+	public Transform UIPanelWin;
 	public float maxVal = 7.3f;
 	public float minVal = 1.5f;
 	public float quickChange = 6f;
@@ -17,6 +19,7 @@ public class Player1SizeChanging : MonoBehaviour{
 	private Vector3 V_MinRadius;
     // The ball;
     private Rigidbody2D FallBall;
+	private OffscreenCheck FallBallCheck;
 	public int charges = 0;
 
 	public int jumpStrength = 75;
@@ -27,10 +30,13 @@ public class Player1SizeChanging : MonoBehaviour{
     private void Awake()
     {
         FallBall = GetComponent<Rigidbody2D>();
+		FallBallCheck = GetComponent<OffscreenCheck> ();
     }
 
 	void Start()
 	{
+		UIPanelLose.gameObject.SetActive (false);
+		UIPanelWin.gameObject.SetActive (false);
 		V_MaxRadius = new Vector3(maxVal, maxVal, 0);
 		V_MinRadius = new Vector3(minVal, minVal, 0);
 		charges = maxCharge;
@@ -41,7 +47,11 @@ public class Player1SizeChanging : MonoBehaviour{
     // Update is called once per frame
 	void Update()
 	{
-	
+		if (Time.time > 90f)
+		{
+			UIPanelWin.gameObject.SetActive (true);
+			Time.timeScale = 0f;
+		}
 	}
 
     void FixedUpdate()
@@ -93,5 +103,19 @@ public class Player1SizeChanging : MonoBehaviour{
 			yield return new WaitForSeconds (waitTime);
 			charges = maxCharge;
 		}
+	}
+
+	void OnBecameInvisible()
+	{
+		if (FallBallCheck.CheckRightBorder ())
+		{
+			UIPanelWin.gameObject.SetActive (true);
+		}
+		else
+		{
+			UIPanelLose.gameObject.SetActive (true);
+		}
+
+		Time.timeScale = 0f;
 	}
 }
