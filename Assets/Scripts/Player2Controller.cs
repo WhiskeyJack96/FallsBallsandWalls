@@ -95,7 +95,7 @@ public class Player2Controller : MonoBehaviour {
 
         }
 
-        if (Input.GetKey(KeyCode.DownArrow) && (money >= extraCost) && !(child_hole_left == null || child_hole_right == null) && (Mathf.Abs(child_hole_left.position.x - child_hole_right.position.x) < 2))
+        if (Input.GetKey(KeyCode.DownArrow) && (money >= extraCost) && !(child_hole_left == null || child_hole_right == null) && (Mathf.Abs(child_hole_left.position.x - child_hole_right.position.x) < 4))
         {
 
             if (holeClone != null)
