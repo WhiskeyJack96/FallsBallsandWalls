@@ -130,6 +130,7 @@ public class Player1SizeChanging : MonoBehaviour{
 		}
         Money.gameObject.SetActive(false);
         GameOver = true;
+		timeDelta = 0f;
 		Time.timeScale = 0f;
 	}
 }
