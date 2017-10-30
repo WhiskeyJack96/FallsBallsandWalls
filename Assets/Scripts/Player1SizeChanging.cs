@@ -61,13 +61,13 @@ public class Player1SizeChanging : MonoBehaviour{
 
     void FixedUpdate()
     {   
-        if (Input.GetKeyDown (KeyCode.S) && charges > 0)
+        if (Input.GetKeyDown (KeyCode.A) && charges > 0)
         {
             FallBall.AddForce (new Vector3(1, 1, 0) * jumpStrength * FallBall.transform.localScale.x / V_MaxRadius.x);
             charges--;
         }
         // Widen the object by 0.5 (Press W) or by 5 (Press W + LeftShift)
-        if (Input.GetKey(KeyCode.W))// & (FallBall.transform.lossyScale.magnitude <= V_MaxRadius.magnitude))
+        if (Input.GetKey(KeyCode.D))// & (FallBall.transform.lossyScale.magnitude <= V_MaxRadius.magnitude))
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -84,7 +84,7 @@ public class Player1SizeChanging : MonoBehaviour{
         }
         // Narrow the object by 0.5 (Press S) or by 5 (Press S + LeftShift)
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.A))
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
