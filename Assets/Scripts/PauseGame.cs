@@ -5,7 +5,7 @@ using UnityEngine.UI; //Need this for calling UI scripts
 public class PauseGame : MonoBehaviour {
 
 	public Transform UIPanel; //Will assign our panel to this variable so we can enable/disable it
-
+	public Player1SizeChanging p;
 	private bool isPaused; //Used to determine paused state
 
 	void Start ()
@@ -16,9 +16,9 @@ public class PauseGame : MonoBehaviour {
 
 	void Update ()
 	{
-		if(Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+		if(Input.GetKeyDown(KeyCode.Escape) && !isPaused && !p.GameOver)
 			Pause();
-		else if(Input.GetKeyDown(KeyCode.Escape) && isPaused)
+		else if(Input.GetKeyDown(KeyCode.Escape) && isPaused && !p.GameOver)
 			UnPause();
 	}
 

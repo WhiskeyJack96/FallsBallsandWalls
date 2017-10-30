@@ -25,6 +25,7 @@ public class Player1SizeChanging : MonoBehaviour{
 	public int jumpStrength = 75;
 	public int maxCharge = 3;
 	public float waitTime = 5;
+    public bool GameOver = false;
     //
     //
     private void Awake()
@@ -50,7 +51,11 @@ public class Player1SizeChanging : MonoBehaviour{
 		if (Time.time > 90f)
 		{
 			UIPanelWin.gameObject.SetActive (true);
-			Time.timeScale = 0f;
+            if(!GameOver)
+            {
+                GameOver = true;
+                Time.timeScale = 0f;
+            }
 		}
 	}
 
