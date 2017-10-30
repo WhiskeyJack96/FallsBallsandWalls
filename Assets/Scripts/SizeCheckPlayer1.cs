@@ -27,12 +27,12 @@ public class SizeCheckPlayer1 : MonoBehaviour {
         
         if (hit.collider != null)
         {
-            print(hit.distance);
+
 
             float ballRadius = FallBall.gameObject.GetComponent<CircleCollider2D>().radius;
             float ballScaleY = FallBall.gameObject.GetComponent<Transform>().localScale.y;
             float trueRadius = ballRadius * ballScaleY;
-            print(ballRadius);
+
             //print();
             if (hit.distance< trueRadius)
             {
