@@ -41,41 +41,44 @@ public class Player2Controller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		deltaTime = Time.time - lastTime;
+		if (Time.timeScale == 1f)
+		{
+			deltaTime = Time.time - lastTime;
 
-		if (deltaTime >= 0.1f)
-		{
-			lastTime = Time.time;
-			money+=5;
-		}
-		 
-		//text.updateText(money.ToString());
-
-		if(Input.GetKeyDown(KeyCode.LeftArrow) && (money >= caveCost))
-		{
-			caveClone = Instantiate (cave, new Vector3 (-25, -1.5f, 0), new Quaternion (0, 0, 0, 0));
-			caveTop = caveClone.transform.GetChild (0);
-			caveTop.parent = caveClone.transform.GetChild (0);
-			money -= caveCost;
-		}
-		else if (Input.GetKey (KeyCode.LeftArrow) && (money >= extraCost) && (caveTop.localScale.y <= maxCave))
-		{
-			if (caveClone != null)
+			if (deltaTime >= 0.1f)
 			{
-				caveTop.localScale += new Vector3(0, 1, 0) *2* scaleSpeed * Time.deltaTime;
-				caveTop.position -= new Vector3 (0, 1, 0) *2* scaleSpeed * Time.deltaTime / 2;
+				lastTime = Time.time;
+				money += 5;
+			}
+		 
+			//text.updateText(money.ToString());
+
+			if (Input.GetKeyDown (KeyCode.LeftArrow) && (money >= caveCost))
+			{
+				caveClone = Instantiate (cave, new Vector3 (-25, -1.5f, 0), new Quaternion (0, 0, 0, 0));
+				caveTop = caveClone.transform.GetChild (0);
+				caveTop.parent = caveClone.transform.GetChild (0);
+				money -= caveCost;
+			}
+			else
+			if (Input.GetKey (KeyCode.LeftArrow) && (money >= extraCost) && (caveTop.localScale.y <= maxCave))
+			{
+				if (caveClone != null)
+				{
+					caveTop.localScale += new Vector3 (0, 1, 0) * 2 * scaleSpeed * Time.deltaTime;
+					caveTop.position -= new Vector3 (0, 1, 0) * 2 * scaleSpeed * Time.deltaTime / 2;
+				}
+
+				money -= extraCost;
 			}
 
-			money -= extraCost;
-		}
-
-		if(Input.GetKeyDown(KeyCode.RightArrow) && (money >= bumpCost))
-		{
-			bumpClone = Instantiate (bump, new Vector3 (-22, -1.5f, 0), new Quaternion (0, 0, 0, 0));
-			//bumpClone.transform.parent = bump.transform;
-			money -= caveCost;
-		}
-		/*else if (Input.GetKey (KeyCode.RightArrow) && (money >= extraCost) && (bumpClone.transform.localScale.y <= maxBump))
+			if (Input.GetKeyDown (KeyCode.RightArrow) && (money >= bumpCost))
+			{
+				bumpClone = Instantiate (bump, new Vector3 (-22, -1.5f, 0), new Quaternion (0, 0, 0, 0));
+				//bumpClone.transform.parent = bump.transform;
+				money -= caveCost;
+			}
+			/*else if (Input.GetKey (KeyCode.RightArrow) && (money >= extraCost) && (bumpClone.transform.localScale.y <= maxBump))
 		{
 			if (bumpClone != null)
 			{
@@ -86,47 +89,48 @@ public class Player2Controller : MonoBehaviour {
 			money -= extraCost;
 		}*/
 
-        if (Input.GetKeyDown(KeyCode.DownArrow) && (money >= holeCost))
-        {
-            holeClone = Instantiate(hole, new Vector3(-19.5f, -1.5f, 0), new Quaternion(0, 0, 0, 0));
-            money -= holeCost;
-            child_hole_left = holeClone.gameObject.transform.GetChild(0);
-            child_hole_right = holeClone.gameObject.transform.GetChild(1);
+			if (Input.GetKeyDown (KeyCode.DownArrow) && (money >= holeCost))
+			{
+				holeClone = Instantiate (hole, new Vector3 (-19.5f, -1.5f, 0), new Quaternion (0, 0, 0, 0));
+				money -= holeCost;
+				child_hole_left = holeClone.gameObject.transform.GetChild (0);
+				child_hole_right = holeClone.gameObject.transform.GetChild (1);
 
-        }
+			}
 
-        if (Input.GetKey(KeyCode.DownArrow) && (money >= extraCost) && !(child_hole_left == null || child_hole_right == null) && (Mathf.Abs(child_hole_left.position.x - child_hole_right.position.x) < 4))
-        {
+			if (Input.GetKey (KeyCode.DownArrow) && (money >= extraCost) && !(child_hole_left == null || child_hole_right == null) && (Mathf.Abs (child_hole_left.position.x - child_hole_right.position.x) < 4))
+			{
 
-            if (holeClone != null)
-            {
+				if (holeClone != null)
+				{
 
-                child_hole_left.position -= new Vector3(.025f, 0, 0);
+					child_hole_left.position -= new Vector3 (.025f, 0, 0);
 
-                child_hole_right.position += new Vector3(.025f, 0, 0);
+					child_hole_right.position += new Vector3 (.025f, 0, 0);
 
-                money-=extraCost;
+					money -= extraCost;
 
-            }
-        }
-        if(Input.GetKeyUp(KeyCode.DownArrow) && holeClone !=null)
-        {
-        	holeClone.transform.position = new Vector3(-35,0,0);
-        	gm.addToQueue(holeClone);
-        	holeClone=null;
-        }
-        if(Input.GetKeyUp(KeyCode.RightArrow) && bumpClone !=null)
-        {
-        	bumpClone.transform.position = new Vector3(-35,0,0);
-        	gm.addToQueue(bumpClone);
-        	bumpClone=null;
-        }
-        if(Input.GetKeyUp(KeyCode.LeftArrow) && caveClone !=null)
-        {
-        	caveClone.transform.position = new Vector3(-35,0,0);
-        	gm.addToQueue(caveClone);
-        	caveClone=null;
-        }
+				}
+			}
+			if (Input.GetKeyUp (KeyCode.DownArrow) && holeClone != null)
+			{
+				holeClone.transform.position = new Vector3 (-35, 0, 0);
+				gm.addToQueue (holeClone);
+				holeClone = null;
+			}
+			if (Input.GetKeyUp (KeyCode.RightArrow) && bumpClone != null)
+			{
+				bumpClone.transform.position = new Vector3 (-35, 0, 0);
+				gm.addToQueue (bumpClone);
+				bumpClone = null;
+			}
+			if (Input.GetKeyUp (KeyCode.LeftArrow) && caveClone != null)
+			{
+				caveClone.transform.position = new Vector3 (-35, 0, 0);
+				gm.addToQueue (caveClone);
+				caveClone = null;
+			}
+		}
 
     }
 }
