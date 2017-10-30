@@ -28,7 +28,7 @@ public class Player1SizeChanging : MonoBehaviour{
     public bool GameOver = false;
 
     public GameObject Money;
-
+	private float timeDelta = 0f;
     //
     //
     private void Awake()
@@ -53,13 +53,16 @@ public class Player1SizeChanging : MonoBehaviour{
     // Update is called once per frame
 	void Update()
 	{
-		if (Time.time > 90f)
+		timeDelta += Time.deltaTime;
+
+		if (timeDelta > 60f)
 		{
 			UIPanelWin.gameObject.SetActive (true);
             if(!GameOver)
             {
                 GameOver = true;
                 Time.timeScale = 0f;
+				timeDelta = 0f;
             }
 		}
 	}
