@@ -26,6 +26,9 @@ public class Player1SizeChanging : MonoBehaviour{
 	public int maxCharge = 3;
 	public float waitTime = 5;
     public bool GameOver = false;
+
+    public GameObject Money;
+
     //
     //
     private void Awake()
@@ -42,7 +45,9 @@ public class Player1SizeChanging : MonoBehaviour{
 		V_MinRadius = new Vector3(minVal, minVal, 0);
 		charges = maxCharge;
 		StartCoroutine(Recharge());
-	}
+
+        Money = GameObject.Find("Text_Money");
+    }
 
     //
     // Update is called once per frame
@@ -120,6 +125,7 @@ public class Player1SizeChanging : MonoBehaviour{
 		{
 			UIPanelLose.gameObject.SetActive (true);
 		}
+        Money.gameObject.SetActive(false);
         GameOver = true;
 		Time.timeScale = 0f;
 	}
