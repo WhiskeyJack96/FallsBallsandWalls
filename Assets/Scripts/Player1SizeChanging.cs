@@ -47,7 +47,11 @@ public class Player1SizeChanging : MonoBehaviour{
     // Update is called once per frame
 	void Update()
 	{
-	
+		if (Time.time > 90f)
+		{
+			UIPanelWin.gameObject.SetActive (true);
+			Time.timeScale = 0f;
+		}
 	}
 
     void FixedUpdate()
