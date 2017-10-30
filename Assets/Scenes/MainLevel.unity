@@ -4688,8 +4688,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1192568032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 220, y: 124, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
+  m_LocalPosition: {x: 551, y: 316.5, z: 0}
+  m_LocalScale: {x: 1.3775, y: 1.3775, z: 1.3775}
   m_Children:
   - {fileID: 1072674806}
   - {fileID: 1994122442}
@@ -4726,8 +4726,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1195372541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 211.488, y: 128.44604, z: 6.8564453}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
+  m_LocalPosition: {x: 542.488, y: 320.94604, z: 6.8564453}
+  m_LocalScale: {x: 1.3775, y: 1.3775, z: 1.3775}
   m_Children:
   - {fileID: 1918817547}
   - {fileID: 492080147}
@@ -5356,6 +5356,7 @@ GameObject:
   - component: {fileID: 1479196170}
   - component: {fileID: 1479196172}
   - component: {fileID: 1479196171}
+  - component: {fileID: 1479196173}
   m_Layer: 5
   m_Name: Text_Money
   m_TagString: Untagged
@@ -5420,6 +5421,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1479196169}
+--- !u!114 &1479196173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1479196169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fb717801ad0e094b83347cabf7d5ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player2: {fileID: 1858611184}
+  MoneyText: {fileID: 1479196171}
 --- !u!1 &1500090869
 GameObject:
   m_ObjectHideFlags: 0
