@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class MoneyChange : MonoBehaviour
 {
-    // basic cost for building a cave
+    public Player2Controller Player2;
+    public UnityEngine.UI.Text MoneyText;
 
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-		
-	}
+    private void Start()
+    {
+        MoneyText = GetComponent<UnityEngine.UI.Text>();
+        //Player2 = GetComponent<Player2Controller>();
+    }
+
+    public void MoneyDisplay()
+    {
+        print("ddd");
+        MoneyText.text = "$ " + Player2.money.ToString();
+    }
 }
