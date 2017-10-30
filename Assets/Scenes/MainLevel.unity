@@ -483,6 +483,7 @@ GameObject:
   - component: {fileID: 164872888}
   - component: {fileID: 164872890}
   - component: {fileID: 164872889}
+  - component: {fileID: 164872893}
   - component: {fileID: 164872892}
   - component: {fileID: 164872891}
   m_Layer: 0
@@ -616,6 +617,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIPanel: {fileID: 847934729}
+--- !u!114 &164872893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 164872883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722563685a1ba2f4bb305fef75b473f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &168288135 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1122694401641722, guid: e9e5705150fc3de4daec84627ac2ea4e,
@@ -948,7 +960,7 @@ GameObject:
   - component: {fileID: 345878559}
   - component: {fileID: 345878558}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextButtonBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1767,7 +1779,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.8705883, b: 0.5803922, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1782,7 +1794,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 645725202}
+  m_TargetGraphic: {fileID: 1240957558}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1841,8 +1853,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6560fc7746816f64dadcfb660c1dea0f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2929,7 +2941,7 @@ RectTransform:
   m_Children:
   - {fileID: 847934729}
   m_Father: {fileID: 1195372542}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3760,7 +3772,7 @@ RectTransform:
   m_GameObject: {fileID: 1192568032}
   m_LocalRotation: {x: 0, y: 0, z: 0.08878995, w: 0.99605036}
   m_LocalPosition: {x: -11.68, y: 1.48, z: 90}
-  m_LocalScale: {x: 0.0063191154, y: 0.0063191154, z: 0.0063191154}
+  m_LocalScale: {x: 0.014234875, y: 0.014234875, z: 0.014234875}
   m_Children:
   - {fileID: 1072674806}
   - {fileID: 1994122442}
@@ -3797,11 +3809,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1195372541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 652.988, y: 320.94604, z: 6.8564453}
-  m_LocalScale: {x: 1.65375, y: 1.65375, z: 1.65375}
+  m_LocalPosition: {x: 259.988, y: 144.94604, z: 6.8564453}
+  m_LocalScale: {x: 0.67125, y: 0.67125, z: 0.67125}
   m_Children:
-  - {fileID: 1419470153}
   - {fileID: 897226490}
+  - {fileID: 1419470153}
   - {fileID: 61860802}
   m_Father: {fileID: 373473223}
   m_RootOrder: 0
@@ -3880,7 +3892,7 @@ GameObject:
   - component: {fileID: 1240957559}
   - component: {fileID: 1240957558}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text_ButtonBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4142,7 +4154,7 @@ RectTransform:
   m_Children:
   - {fileID: 645725200}
   m_Father: {fileID: 1195372542}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5170,7 +5182,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.38823533, b: 0.32156864, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -5185,7 +5197,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1925017391}
+  m_TargetGraphic: {fileID: 345878558}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -5539,8 +5551,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 638809278}
-        m_MethodName: set_volume
+      - m_Target: {fileID: 164872893}
+        m_MethodName: AudioChange
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
