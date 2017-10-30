@@ -6265,11 +6265,11 @@ MonoBehaviour:
   cave: {fileID: 958786758}
   hole: {fileID: 1426528515}
   bump: {fileID: 884131491}
-  money: 300
+  money: 0
   caveCost: 20
   holeCost: 20
   bumpCost: 20
-  extraCost: 5
+  extraCost: 1
   scaleSpeed: 1
   playerMove: {fileID: 0}
   maxCave: 3.5
